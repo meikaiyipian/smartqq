@@ -7,7 +7,7 @@
 该项目仅提供了最基本的通信协议，你可以在此基础上实现自己的业务逻辑，包括且不限于：
 
 - 拥有 GUI 的 QQ 客户端（Android 或桌面版）
-- 自动聊天回复的 QQ 机器人
+- 自动聊天回复的 QQ 机器人，比如[小薇](https://github.com/b3log/xiaov)
 - 汇总聊天记录并同步在云上
 - 通过 QQ 写邮件、发短信、执行远程服务器的命令
 - 等等……
@@ -100,10 +100,6 @@ public class Application {
 
 ### 常见错误
 
-**编译错误**
-
-由于本项目使用了Lombok，一个在编译器自动添加Get/Set/toString等方法的第三方类库，所以如果Clone的项目因为缺少Get/Set方法而编译报错，则需要下载对应的IDE插件。
-
 **程序无法控制的错误**
 
 错误码103：这个是由于Smart QQ多点登录，后端校验失败。需要手动进入[官网][8]，检查是否能正常接收消息。如果可以的话点击[设置]->[退出登录]后查看是否恢复正常
@@ -120,9 +116,21 @@ public class Application {
 
 2016-2-1：程序无法接收消息，同时登录[官网][8]后也无法接收消息。大约 15:44 左右恢复正常，程序不需要更新。感谢@WiseClock提供信息！
 
+2016-11-3：由于很多人不知 Lombok 为何物而导致编译错误，所以去除了，真为不会使用工具的人感到悲哀！
+
 ### 感谢
 
 现在使用[requests][7]进行 Http 请求
+
+### 其他版本
+
+1. @lonhay 提供了一个基于最新版 Requests 和 Java 8 的[版本][9]
+
+2. @88250 提供了一个可以直接使用的 Web 服务，参见[b3log/xiaov][10]
+
+3. @sjdy521 提供了一个可以通过HTTP协议api接口完成接收、发送QQ消息等功能的项目，参见[Mojo-Webqq][11]
+
+4. @TJYSunset 提供了一个本项目的 C# [版本][12]
 
 ### 联系方式
 
@@ -137,3 +145,7 @@ public class Application {
 [6]: http://www.scienjus.com/webqq-analysis-6/
 [7]: https://github.com/caoqianli/requests
 [8]: http://w.qq.com
+[9]: https://github.com/ScienJus/smartqq/tree/java8
+[10]: https://github.com/b3log/xiaov
+[11]: https://github.com/sjdy521/Mojo-Webqq
+[12]: https://github.com/TJYSunset/DumbQQ
